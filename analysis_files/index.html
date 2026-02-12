@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>San Fransico International Airport(SFO) Air Passenger Traffic Analysis</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --fg:#111111;
+      --muted:#5a5a5a;
+      --border:#e9e9e9;
+      --maxw: 960px;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      font-family:"Cabin", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.6;
+    }
+
+    main{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:40px 18px 64px;
+    }
+
+    header{
+      margin-bottom:28px;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(28px, 3.4vw, 44px);
+      line-height:1.05;
+      letter-spacing:-0.02em;
+      font-weight:800;
+    }
+
+    .lead{
+      margin:0 0 10px;
+      font-size:18px;
+      color:var(--muted);
+      max-width: 78ch;
+    }
+
+    .note{
+      margin:0;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .divider{
+      border:0;
+      border-top:1px solid var(--border);
+      margin:26px 0;
+    }
+
+    section{
+      padding: 6px 0 0;
+    }
+
+    h2{
+      margin:0 0 10px;
+      font-size:20px;
+      font-weight:500;
+      letter-spacing:-0.01em;
+    }
+
+    figure{
+      margin:14px 0 10px;
+    }
+
+    img{
+      width: 90%;
+      height:auto;
+      display:block;
+      margin: 0 auto; /* centers the image */
+    }
+
+    .insights{
+      margin-top:10px;
+      padding-left:12px;
+      border-left:3px solid var(--border);
+    }
+
+    .insights-title{
+      font-weight:800;
+      margin:0 0 6px;
+    }
+
+    .insights ul{
+      margin:0 0 0 18px;
+      padding:0;
+      color:var(--muted);
+    }
+
+    .insights li{
+      font-size: 17px;
+    }
+
+    @media (max-width: 520px){
+      main{ padding:32px 14px 52px; }
+      .lead{ font-size:16px; }
+      h2{ font-size:18px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>San Fransico International Airport(SFO) Air Passenger Traffic Analysis</h1>
+      <p class="lead">SFO air passenger traffic EDA in Python using pandas: cleaning, visualization and insights.</p>
+      <p class="note">Note: To view the full notebook, see <strong>analysis.ipynb</strong> in this repository.</p>
+    </header>
+
+    <hr class="divider" />
+
+    <section id="analysis-1">
+      <h2>Analysis-1 : Summer Passenger Traffic Trends at SFO (2015–2024, Deplaned Passengers)</h2>
+
+      <figure>
+        <img
+          src="./analysis_files/figure-html/cell-10-output-1.png"
+          alt="Summer passenger arrivals at SFO (2015–2024) by month (June, July, August)"
+          loading="lazy"
+        />
+      </figure>
+
+      <div class="insights">
+        <p class="insights-title">Insights</p>
+        <ul>
+          <li>Arriving passenger traffic at SFO grew steadily from 2015 until the sharp decline in 2020 due to the COVID-19 pandemic and travel restrictions.</li>
+          <li>Since then, arrivals have been recovering each year but haven’t quite reached pre-pandemic highs yet.</li>
+          <li>Across most years, July shows the highest arrivals compared to June and August, consistently being the month to receive the highest number of vistors in Summer.</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section id="analysis-2">
+      <h2>Analysis-2 : Domestic vs International Passenger Traffic Trends at SFO (2015–2024, Deplaned Passengers)</h2>
+
+      <figure>
+        <img
+          src="./analysis_files/figure-html/cell-12-output-1.png"
+          alt="Domestic vs International arrivals at SFO (2015–2024)"
+          loading="lazy"
+        />
+      </figure>
+
+      <div class="insights">
+        <p class="insights-title">Insights</p>
+        <ul>
+          <li>SFO is driven heavily by domestic travel, even though it is a major international hub.</li>
+          <li>Both domestic and international arrivals grew steadily until peaking in 2019, followed by a sharp collapse in 2020 due to COVID-19.</li>
+          <li>Since then, international arrivals have gradually reached its pre-COVID highs, where as the domestic arrivals are still lagging behind.</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section id="analysis-3">
+      <h2>Analysis-3 : Top 10 Airlines chosen by International Departing Passengers at SFO (2020–2024)</h2>
+
+      <figure>
+        <img
+          src="./analysis_files/figure-html/cell-16-output-1.png"
+          alt="Top 10 airlines by international departing passengers at SFO (2020–2024)"
+          loading="lazy"
+        />
+      </figure>
+
+      <div class="insights">
+        <p class="insights-title">Insights</p>
+        <ul>
+          <li>United Airlines overwhelmingly leads international departures from SFO, carrying more passengers than all the other top airlines combined.</li>
+          <li>Air Canada stands out as a distant second, while the rest of the top 10 airlines maintain relatively similar passenger counts in the 0.5–0.75 million range.</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section id="analysis-4">
+      <h2>Analysis-4 : SFO Popularity as a Transit Hub (2015–2024)</h2>
+
+      <figure>
+        <img
+          src="./analysis_files/figure-html/cell-20-output-1.png"
+          alt="Transit passenger share at SFO (2015–2024)"
+          loading="lazy"
+        />
+      </figure>
+
+      <div class="insights">
+        <p class="insights-title">Insights</p>
+        <ul>
+          <li>Transit passengers make up a very small fraction of SFO’s total traffic, always under 0.2%.</li>
+          <li>While the share rose sharply before the pandemic and peaked in 2022, SFO is clearly an origin &amp; destination (O&amp;D) airport rather than a major transit hub.</li>
+          <li>SFO has seen a slight decline in the share of Transit passengers in recent years.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
